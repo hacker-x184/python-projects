@@ -1,3 +1,5 @@
+from register import *
+# from bank import *
 print("Welcome to our Banking System")
 while True:
     try:
