@@ -32,7 +32,6 @@ if __name__ == "__main__":
     create_customer_table()
 def db_query(query):
     cursor.execute(query)
-
     if query.strip().upper().startswith("SELECT"):
         return cursor.fetchall()
     else:
