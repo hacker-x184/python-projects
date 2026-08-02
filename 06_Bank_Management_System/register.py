@@ -2,6 +2,7 @@
 import random
 from database import *
 from customers import *
+from bank import *
 def SingUp():
     username=input("Enter Your name here :-")
     temp = db_query(f"SELECT username FROM customers where username = '{username}';")
@@ -25,12 +26,17 @@ def SingUp():
                 print(f"Your account number is {acc_num}")
                 isvalue = False
     cobj = Customer(username,password,name,age,city,acc_num)
+    bobj = Bank(username,acc_num)
 def SingIn():
-    acc_no = int(input())
+    acc_no = int(input("Enter Your account number here :-"))
     password = input("Enter Your Password here :-")
-    temp_acc = db_query(f"select account_number from customers where {acc_no} = account_number")
-    temp_pass = db_query(f"select password from customers where {password} = password")
-    if acc_no == temp_acc and password == temp_pass:
-        print("SignIn Successful ")
+    temp_acc = db_query(f"select account_number from customers where account_number = {acc_no}")
+    temp_pass = db_query(f"select password from customers where password = '{password}'")
+    if temp_acc and temp_pass:
+        if password == temp_pass[0][0]:
+            
+            print("Sign In Successful ")
+        else:
+            print("Wrong Password")
     else:
-        print("Your Account Number and Password are wrong")
+        print("Your Account Number not found")
