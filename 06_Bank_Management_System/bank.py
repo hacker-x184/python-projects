@@ -13,3 +13,9 @@ class Bank:
                 f"account_number INTEGER,"
                 f"remarks VARCHAR(30),"
                 f"amount INTEGER )")
+    def deposit(self,amount):
+        temp = db_query(f"SELECT balance")
+    
+    def check_balance(self,username,account_number):
+        balance = db_query(f"SELECT {username} from {username}_transaction")
+        print(f"Your Account {account_number} has the total Balance {balance}")

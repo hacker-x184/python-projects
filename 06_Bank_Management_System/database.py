@@ -20,7 +20,8 @@ def create_customer_table():
             name VARCHAR(20),
             age INTEGER,
             city VARCHAR(20),
-            account_number INTEGER,
+            balance INTEGER,
+            account_number INTEGER NOT NULL,
             status BOOLEAN
         );
     """)

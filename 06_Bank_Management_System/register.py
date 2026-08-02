@@ -15,6 +15,7 @@ def SingUp():
         name = input("Enter your name:-")
         age = int(input("Enter your age here:-"))
         city = input("Enter your city:-")
+        balance = int(input("Enter your current balance"))
         isvalue = True
         while isvalue:
             acc_num = random.randint(10000000,999999999)
@@ -25,7 +26,7 @@ def SingUp():
             else:
                 print(f"Your account number is {acc_num}")
                 isvalue = False
-    cobj = Customer(username,password,name,age,city,acc_num)
+    cobj = Customer(username,password,name,age,city,balance,acc_num)
     bobj = Bank(username,acc_num)
 def SingIn():
     acc_no = int(input("Enter Your account number here :-"))
@@ -34,9 +35,9 @@ def SingIn():
     temp_pass = db_query(f"select password from customers where password = '{password}'")
     if temp_acc and temp_pass:
         if password == temp_pass[0][0]:
-            
-            print("Sign In Successful ")
+            print("Sign In Successful ")            
         else:
             print("Wrong Password")
     else:
         print("Your Account Number not found")
+    
