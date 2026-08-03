@@ -1,4 +1,5 @@
 from Book import Book
+from borrow import borrow_book
 from database import *
 import random
 def choice_1():
@@ -16,30 +17,41 @@ def choice_1():
         book = Book(title,category,isbn,quantity)
         book.add_book()
         print("Your Book is successfully added in library!")
-        
     except Exception as e:
-            print(e)
-                
+            print(e)          
 def choice_2():
     try:
         isbn = input("Enter Your Book isbn Number Here :- ")
         if isbn:
-            title = db_query(f"SELECT title FROM book where isbn = '{isbn}';")
-            Book.remove_book(isbn)
-            print(f"Your {title[0][0]} are Remove from the data base")
-        else:
-            print("Your book are not available in library")
+            result = db_query(f"SELECT quantity FORM book WHERE isbn='{isbn}';")
+            qn = result[0][0]-1
+            if qn >=0:
+                borrow_book(isbn,qn)
+            else:
+                print("This book are currently not available in library")
     except Exception as e:
         print(e)
-    
-    
-    
-    
 def choice_3():
-    print()
+    try:
+        isbn = int(input("Enter Your Book isbn :--"))
+        temp = db_query(f"""SELECT isbn FROM book WHERE isbn = '{isbn}'""")
+        if temp:
+            Book.remove_book(isbn)
+        else:
+            print(f"Your book {isbn} are not available in library")
+    except Exception as e:
+        print(e)
 def choice_4():
     print()
 def choice_5():
-    print()
+    try:
+        isbn = int(input("Enter Your Book isbn :--"))
+        temp = db_query(f"""SELECT isbn FROM book WHERE isbn = '{isbn}'""")
+        if temp:
+            Book.search_book(isbn)
+        else:
+            print(f"Your book {isbn} are not available in library")
+    except Exception as e:
+        print(e)
 def choice_6():
-    print()
+    Book.display_book()

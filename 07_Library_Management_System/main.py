@@ -16,8 +16,17 @@ try:
             choice_2()
         elif user_choice == 3:
             choice_3()
+        elif user_choice == 4:
+            choice_4()
+        elif user_choice == 5:
+            choice_5()
+        elif user_choice == 6:
+            choice_6()
         elif user_choice == 7:
             in_library=False
             print("Thnx for Coming 🫡")
+        else:
+            print("User Selected the invalid operation:-)\nNow exit the library")
+            in_library=False
 except Exception:
     print("")
