@@ -2,6 +2,7 @@ from Book import Book
 from borrow import borrow_book
 from database import *
 import random
+from members import *
 def choice_1():
     try:
         title = input("Enter Your Book title here :-")
@@ -55,3 +56,12 @@ def choice_5():
         print(e)
 def choice_6():
     Book.display_book()
+def choice_7():
+    name = input("Please Enter your name here:--")
+    phone = input("Please Enter your Phone number here:--")
+    city = input("Please Enter your City here:--")
+    member = Members.add_member(name,phone,city)
+def choice_8():
+    member_id = int(input("Please Enter your members here:--"))
+    Members.remove_member(member_id)
+    
