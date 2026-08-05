@@ -15,11 +15,10 @@ def return_book(book_id):
             print("Your book id are not Avaiable")
     except Exception as e:
         print(e)
-
 def borrow_history(member_id):
     try:
         temp = db_query(f"SELECT * FROM borrow WHERE member_id = {member_id};")
-        print("here is your history:-n",temp)
+        print("here is your history:-\n",temp)
     except Exception as e:
         print(e)
 def check_overdue():
@@ -31,9 +30,6 @@ def check_overdue():
     except Exception as e:
         print(e)
 """borrow_book()
-
 return_book()
-
 borrow_history()
-
 overdue_books()"""
