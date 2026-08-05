@@ -1,219 +1,179 @@
-# 📚 Library Management System
+<h1 align="center">
+🐍 Python Projects Collection
+</h1>
 
-A console-based **Library Management System** built using **Python**, **Object-Oriented Programming (OOP)**, and **PostgreSQL**. This project demonstrates CRUD operations, relational database management, and modular programming concepts.
+<p align="center">
+A collection of Python projects built while learning Python, Object-Oriented Programming, PostgreSQL, and Problem Solving.
+</p>
 
----
+<p align="center">
 
-## 🚀 Features
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Learning-blue?style=for-the-badge&logo=postgresql)
+![OOP](https://img.shields.io/badge/OOP-Projects-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-### 📖 Book Management
-- ➕ Add New Book
-- ❌ Remove Book
-- ✏️ Update Book Details
-- 🔍 Search Book by ISBN
-- 📋 Display All Books
-
-### 👤 Member Management
-- ➕ Add Member
-- ❌ Remove Member
-- ✏️ Update Member Details
-- 🔍 Search Member
-- 📋 Display All Members
-
-### 🔄 Borrow Management
-- 📚 Borrow Book
-- ↩️ Return Book
-- 📜 Borrow History
-- ⏰ Check Overdue Books
-
-### 🗄️ Database
-- PostgreSQL Integration
-- Relational Database Design
-- Foreign Key Relationships
-- Automatic Table Creation
+</p>
 
 ---
 
-# 🛠️ Tech Stack
+# 📖 About This Repository
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3 | Programming Language |
-| PostgreSQL | Database |
-| psycopg2 | PostgreSQL Connector |
-| SQL | Database Queries |
-| OOP | Project Structure |
+This repository contains my Python learning journey—from beginner projects to database-driven applications.
+
+Each project helped me strengthen different programming concepts including:
+
+- Python Fundamentals
+- Object-Oriented Programming
+- Exception Handling
+- Modular Programming
+- PostgreSQL
+- SQL
+- Database Design
+- Project Structure
+- Problem Solving
+
+The projects are organized in the order I built them so that my progress can be seen over time.
 
 ---
 
-# 📂 Project Structure
+# 🚀 Projects
+
+| No. | Project | Concepts |
+|----|---------|----------|
+| 01 | 🎯 Number Guessing Game | Loops, Random Module |
+| 02 | ✊ Rock Paper Scissors | Conditions, Functions |
+| 03 | ❓ Quiz Game | Lists, Dictionaries |
+| 04 | 🧮 Calculator | Functions, Modular Programming |
+| 05 | 👨‍🎓 Student Management System | OOP, CRUD |
+| 06 | 🏦 Bank Management System | OOP, File Structure |
+| 07 | 📚 Library Management System | PostgreSQL, SQL, OOP, Database Design |
+
+---
+
+# ⭐ Featured Project
+
+## 📚 Library Management System
+
+A console-based Library Management System built using **Python**, **PostgreSQL**, and **Object-Oriented Programming**.
+
+### Features
+
+- Add Book
+- Remove Book
+- Update Book
+- Search Book
+- Display Books
+- Add Members
+- Borrow Books
+- Return Books
+- Borrow History
+- PostgreSQL Database Integration
+
+### Technologies
+
+- Python
+- PostgreSQL
+- psycopg2
+- SQL
+- OOP
+
+---
+
+# 🛠️ Technologies Used
+
+- Python
+- PostgreSQL
+- SQL
+- psycopg2
+- Object-Oriented Programming
+- Git
+- GitHub
+
+---
+
+# 📈 Learning Progress
+
+✅ Python Fundamentals
+
+✅ Functions
+
+✅ OOP
+
+✅ Exception Handling
+
+✅ Modules & Packages
+
+✅ PostgreSQL
+
+✅ SQL CRUD Operations
+
+✅ Database Relationships
+
+🔄 Currently Learning
+
+- Django
+- Data Structures & Algorithms (C)
+- Machine Learning
+
+---
+
+# 🎯 Future Projects
+
+- 🌐 Django Blog Website
+- 🍔 Restaurant Management System
+- 🛒 E-Commerce Website
+- 📊 AI Analytics Dashboard
+- 🤖 AI Resume Screening System
+
+---
+
+# 📌 Repository Structure
 
 ```
-Library_Management_System/
+Python-Projects
 │
-├── database.py          # Database connection & table creation
-├── book.py              # Book CRUD operations
-├── members.py           # Member CRUD operations
-├── borrow.py            # Borrow & Return operations
-├── choice.py            # Menu logic
-├── main.py              # Entry point
-├── requirements.txt
+├── 01_Number_Guessing_Game
+├── 02_Rock_Paper_Scissors
+├── 03_Quiz_Game
+├── 04_Calculator
+├── 05_Student_Management_System
+├── 06_Bank_Management_System
+├── 07_Library_Management_System
+│
 └── README.md
 ```
 
 ---
 
-# 🗃️ Database Schema
+# 👨‍💻 About Me
 
-## 📚 Book Table
-
-| Column | Type |
-|---------|------|
-| book_id | SERIAL PRIMARY KEY |
-| title | VARCHAR(100) |
-| category | VARCHAR(50) |
-| isbn | VARCHAR(20) |
-| quantity | INT |
-| available | BOOLEAN |
-| created_at | TIMESTAMP |
-
----
-
-## 👤 Member Table
-
-| Column | Type |
-|---------|------|
-| member_id | SERIAL PRIMARY KEY |
-| name | VARCHAR(50) |
-| phone | VARCHAR(15) |
-| city | VARCHAR(20) |
-| joined_on | DATE |
-| status | BOOLEAN |
-
----
-
-## 🔄 Borrow Table
-
-| Column | Type |
-|---------|------|
-| borrow_id | SERIAL PRIMARY KEY |
-| book_id | Foreign Key |
-| member_id | Foreign Key |
-| borrow_date | DATE |
-| due_date | DATE |
-| return_date | DATE |
-| status | BOOLEAN |
-
----
-
-# ⚙️ Installation
-
-### 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/hacker-x184/Library-Management-System.git
-```
-
-### 2️⃣ Move into the Project
-
-```bash
-cd Library-Management-System
-```
-
-### 3️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4️⃣ Configure PostgreSQL
-
-Open `database.py` and update:
-
-```python
-host="localhost"
-database="library"
-user="postgres"
-password="your_password"
-port="5001"
-```
-
-### 5️⃣ Run the Project
-
-```bash
-python main.py
-```
-
-The database tables will be created automatically if they do not already exist.
-
----
-
-# 🎯 Learning Outcomes
-
-Through this project, I practiced:
-
-- Object-Oriented Programming (OOP)
-- Python Modules & Packages
-- PostgreSQL Integration
-- SQL CRUD Operations
-- Foreign Key Relationships
-- Exception Handling
-- Modular Project Structure
-- Database Design
-- Problem Solving
-
----
-
-# 📸 Sample Menu
-
-```
-=========================================
-      📚 Library Management System
-=========================================
-
-1. Add Book
-2. Borrow Book
-3. Remove Book
-4. Return Book
-5. Search Book
-6. Display Books
-7. Add Member
-8. Exit
-
-=========================================
-```
-
----
-
-# 🚧 Future Improvements
-
-- User Authentication
-- Fine Calculation for Overdue Books
-- ISBN Validation
-- Better Console UI
-- Search by Book Title
-- Member Login
-- Export Reports
-- Django Web Interface
-
----
-
-# 👨‍💻 Author
-
-**Mohd Inzamam**
+Hi, I'm **Mohd Inzamam** 👋
 
 🎓 B.Tech CSE (AI & ML)
 
-🌱 Currently Learning:
-- Django
-- Machine Learning
-- Data Science
-- Full Stack Development
+I'm passionate about software development and AI/ML. Currently learning Django while strengthening my backend development skills through hands-on projects.
 
-GitHub: https://github.com/hacker-x184
+### Current Tech Stack
+
+- Python
+- PostgreSQL
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Git & GitHub
 
 ---
 
-# ⭐ If you like this project
+# ⭐ Support
 
-If you found this project useful or interesting, consider giving it a ⭐ on GitHub.
+If you found this repository useful, consider giving it a **⭐ Star**.
+
+It motivates me to keep learning and building.
+
+---
+
+<p align="center">
+<b>Thank you for visiting my repository! 🚀</b>
+</p>
